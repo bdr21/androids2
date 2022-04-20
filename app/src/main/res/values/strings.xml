@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Miola S2 Projet TP</string>
+    <string name="label_fullname">Nom complet :</string>
+    <string name="label_email">Email :</string>
+    <string name="label_pwd">Mot de passe :</string>
+    <string name="label_confirm_pwd">Confirmez le mot de passe :</string>
+    <string name="hint_fullname">Entrez votre nom légal complet...</string>
+    <string name="hint_email">Entrez votre adresse électronique...</string>
+    <string name="hint_pwd">Entrez votre mot de passe...</string>
+    <string name="hint_confirm_pwd">Retappez le mot de passe...</string>
+    <string name="btn_login">se connecter</string>
+    <string name="btn_logout">se déconnecter</string>
+    <string name="btn_signup">Créer un compte</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="mister_abrv">Mr.</string>
+    <string name="miss_abrv">Mme.</string>
+    <string name="btn_proceed">continuer</string>
+    <!-- Strings related to login -->
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="emploi_du_temps">Emploi du temps</string>
+    <string name="liste_des_etudiants">Liste des étudiants</string>
+    <string name="mon_profil">Mon profil</string>
+</resources>

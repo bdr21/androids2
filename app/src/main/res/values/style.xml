@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="textSizeTheme" parent="android:Theme">
+        <item name="android:textViewStyle">@style/textSizeStyle</item>
+    </style>
+
+    <style name="textSizeStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>
