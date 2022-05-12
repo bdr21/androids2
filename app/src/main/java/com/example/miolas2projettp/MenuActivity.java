@@ -20,4 +20,7 @@ public class MenuActivity extends AppCompatActivity {
     public void goToStudentListAct(View v) {
         startActivity(new Intent(MenuActivity.this, StudentListActivity.class));
     }
+    public void goToInboxAct(View v) {
+        startActivity(new Intent(MenuActivity.this, InboxActivity.class));
+    }
 }

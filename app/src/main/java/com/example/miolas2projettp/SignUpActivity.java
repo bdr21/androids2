@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText fieldEmail, fieldPwd, fieldFullName;
     private Button btnSignUp;
     private FirebaseAuth auth;
+    String role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,25 @@ public class SignUpActivity extends AppCompatActivity {
         fieldFullName = (EditText) findViewById(R.id.fieldFullName);
     }
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.role_radio_admin:
+                if (checked) role = "ADMIN";
+                break;
+            case R.id.role_radio_professor:
+                if (checked) role = "PROFESSOR";
+                break;
+            case R.id.role_radio_student:
+                if (checked) role = "STUDENT";
+                break;
+            default: role = "STUDENT";
+        }
+    }
+
     public void createUserInFirebase(View vue) {
         String email = fieldEmail.getText().toString().trim();
         String password = fieldPwd.getText().toString().trim();
@@ -46,7 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
             new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
-                    User user = new User(email,full_name, User.RoleEnum.PROFESSOR);
+                    User user = new User(email,full_name, role);
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     Task fs_task = db.collection("users").document(email).set(user.getInfo());
                     fs_task.addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<DocumentReference>() {

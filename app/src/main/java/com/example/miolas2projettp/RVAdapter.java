@@ -11,41 +11,30 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.StorageReference;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVHolder> {
-//    private String[] dummy_data , filieres , addinfos;
     private Context context;
-    private QuerySnapshot dummy_data;
-//    public RVAdapter(String[] param_data , String[] param_filieres , String[] param_addinfo, Context context) {
-//        this.dummy_data = param_data;
-//        this.filieres = param_filieres;
-//        this.addinfos = param_addinfo;
-//        this.context = context;
-//    }
-    public RVAdapter(QuerySnapshot param_data, Context context) {
-        this.dummy_data = param_data;
+    ArrayList<QueryDocumentSnapshot> students = new ArrayList<>();
+
+    public RVAdapter(ArrayList<QueryDocumentSnapshot> students, Context context) {
+        this.students = students;
         this.context = context;
     }
+
 
     public static class RVHolder extends RecyclerView.ViewHolder {
         private final TextView tv_student_name , tv_filiere , tv_additional_info;
         private ImageView iv_student_photo;
         public RVHolder(View v) {
             super(v);
-            tv_student_name = (TextView) v.findViewById(R.id.student_name);
-            tv_filiere = (TextView) v.findViewById(R.id.filiere);
+            tv_student_name = (TextView) v.findViewById(R.id.prof_name);
+            tv_filiere = (TextView) v.findViewById(R.id.departement);
             tv_additional_info = (TextView) v.findViewById(R.id.additional_info);
-            iv_student_photo = (ImageView) v.findViewById(R.id.student_photo);
+            iv_student_photo = (ImageView) v.findViewById(R.id.prof_photo);
         }
         public TextView getTv_student_name() { return tv_student_name; }
         public TextView getTv_filiere() { return tv_filiere; }
@@ -64,16 +53,31 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RVHolder holder, int pos) {
-        holder.getTv_student_name().setText(dummy_data.getDocuments().get(0).get("full_name").toString());
-        holder.getTv_filiere().setText(dummy_data.getDocuments().get(0).get("filiere").toString());
-        holder.getTv_additional_info().setText(dummy_data.getDocuments().get(0).get("description").toString());
+        QueryDocumentSnapshot student = students.get(pos);
+        holder.getTv_student_name().setText(student.get("full_name").toString());
+        holder.getTv_filiere().setText(student.get("filiere").toString());
+        holder.getTv_additional_info().setText(student.get("description").toString());
         Glide.with(context).load("https://goo.gl/gEgYUd").into(holder.getIv_student_photo());
 //        holder.getIv_student_photo().setImageResource(R.drawable.ensias);
     }
 
     @Override
     public int getItemCount() {
-        if (dummy_data == null) return 0;
-        return dummy_data.getDocuments().size();
+        return students == null ? 0 : students.size();
+    }
+
+    public void updateContent(ArrayList<QueryDocumentSnapshot> students) {
+        this.students = students;
+        this.notifyDataSetChanged();
     }
 }
+
+
+//    public RVAdapter(String[] param_data , String[] param_filieres , String[] param_addinfo, Context context) {
+//        this.dummy_data = param_data;
+//        this.filieres = param_filieres;
+//        this.addinfos = param_addinfo;
+//        this.context = context;
+//    }
+
+//    private String[] dummy_data , filieres , addinfos;

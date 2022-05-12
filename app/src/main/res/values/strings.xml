@@ -26,5 +26,6 @@
     <string name="login_failed">"Login failed"</string>
     <string name="emploi_du_temps">Emploi du temps</string>
     <string name="liste_des_etudiants">Liste des étudiants</string>
+    <string name="liste_des_profs">Liste des professeurs</string>
     <string name="mon_profil">Mon profil</string>
 </resources>
