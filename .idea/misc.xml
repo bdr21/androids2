@@ -8,16 +8,21 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_admin_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_emploi.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_inbox.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_inbox.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_menu.xml" value="0.33" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_new_msg.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_prof_list.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_reset_pwd.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_student_emploi.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_student_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/activity_student_menu.xml" value="0.25" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/gradient.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/inbox_row_item.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/prv_row_item.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/layout/rv_row_item.xml" value="0.49444444444444446" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/MiolaS2ProjetTP/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1945" />
       </map>
     </option>
   </component>

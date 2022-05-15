@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         ff = FirebaseFirestore.getInstance();
-
+        
         welcomeTV = (TextView) findViewById(R.id.welcome);
         welcomeTV.append(" " + auth.getCurrentUser().getEmail());
         // this listener will be called when there is change in firebase user session
@@ -83,7 +83,11 @@ public class HomeActivity extends AppCompatActivity {
                             Log.d("role/of/user/query","role is admin");
                             startActivity(new Intent(HomeActivity.this, AdminMenuActivity.class));
                         }
-                        else Log.d("role/of/user/query", "role is neither");
+                        else if (role.equals("STUDENT")) {
+                            Log.d("role/of/user/query","role is student");
+                            startActivity(new Intent(HomeActivity.this, StudentMenuActivity.class));
+                        }
+                        else Log.d("role/of/user/query", "role is unknown");
                     }
                 }
             }

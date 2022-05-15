@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,8 +34,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        btnSignUp = (Button) findViewById(R.id.btn_signup2);
-        fieldEmail = (EditText) findViewById(R.id.fieldEmail);
+        btnSignUp = (Button) findViewById(R.id.sendMsgBtn);
+        fieldEmail = (EditText) findViewById(R.id.input_receiver);
         fieldPwd = (EditText) findViewById(R.id.fieldPwd);
         fieldFullName = (EditText) findViewById(R.id.fieldFullName);
     }
@@ -67,6 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
             new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
+                    Log.d("*-",authResult.getUser().getUid());
                     User user = new User(email,full_name, role);
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     Task fs_task = db.collection("users").document(email).set(user.getInfo());

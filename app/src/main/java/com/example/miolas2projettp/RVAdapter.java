@@ -1,6 +1,7 @@
 package com.example.miolas2projettp;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,9 +55,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVHolder> {
     @Override
     public void onBindViewHolder(@NonNull RVHolder holder, int pos) {
         QueryDocumentSnapshot student = students.get(pos);
+//        String x = student.get("full_name").toString();
+//        Log.d("tagg",x);
         holder.getTv_student_name().setText(student.get("full_name").toString());
         holder.getTv_filiere().setText(student.get("filiere").toString());
-        holder.getTv_additional_info().setText(student.get("description").toString());
+        holder.getTv_additional_info().setText(student.get("email").toString());
         Glide.with(context).load("https://goo.gl/gEgYUd").into(holder.getIv_student_photo());
 //        holder.getIv_student_photo().setImageResource(R.drawable.ensias);
     }
